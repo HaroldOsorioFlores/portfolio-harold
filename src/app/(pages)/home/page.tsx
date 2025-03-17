@@ -7,11 +7,8 @@ import {
   CardContent,
   CardDescription,
   CardFooter,
-  CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Form } from "@/components/ui/form";
 import InputAnimation from "@/components/input-animation";
 
 export default function HomePage() {
