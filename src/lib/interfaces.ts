@@ -8,3 +8,10 @@ export interface ItemsList {
 export interface IconsList extends ItemsList {
   icon: JSX.Element;
 }
+
+export interface IProjects {
+  title: string;
+  description: string;
+  images: string[];
+  urlDemo: string | null;
+}

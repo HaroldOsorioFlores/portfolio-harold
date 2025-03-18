@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { IconsList } from "@/lib/interfaces";
 import { Github, Linkedin } from "lucide-react";
@@ -9,7 +11,9 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-import InputAnimation from "@/components/input-animation";
+import { Button } from "@/components/ui/button";
+import { dataProjects } from "@/lib/data";
+import { CldImage } from "next-cloudinary";
 
 export default function HomePage() {
   return (
@@ -48,21 +52,19 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-2 h-[470px]" id="about">
-        <div>
-          <Image
-            src={"/home-about.jpg"}
-            width={1000}
-            height={1000}
-            alt="home-about"
-            className="h-[470px] object-cover"
-          />
-        </div>
+      <section className="grid md:grid-cols-2 h-[470px]" id="about">
+        <Image
+          src={"/home-about.jpg"}
+          width={1000}
+          height={1000}
+          alt="home-about"
+          className="h-[470px] object-cover absolute z-10 md:relative"
+        />
         <div
           id="about-me"
-          className="text-muted flex flex-col gap-4 justify-center items-center text-center py-4 px-10"
+          className="text-muted flex flex-col gap-4 justify-center items-center text-center py-4 px-10 z-20 bg-primary/50 backdrop-invert backdrop-opacity-10 md:bg-transparent"
         >
-          <h2 className="text-2xl text-cyan-500">Acerca de mi</h2>
+          <h2 className="text-2xl text-cyan-500 font-medium">Acerca de mi</h2>
           <p className="text-sm">
             Soy desarrollador de software, siendo capaz de crear, aplicar
             tecnologías de la información en cualquier entorno de desarrollo. He
@@ -73,36 +75,59 @@ export default function HomePage() {
           </p>
         </div>
       </section>
-      <section className="px-8 py-12 flex flex-col gap-4" id="projects">
-        <h2 className="text-2xl text-cyan-500 text-center">Proyectos</h2>
-        <div className="max-w-[1100px] w-full mx-auto">
-          <Card className="bg-primary/30 backdrop-invert backdrop-opacity-10 border-0 max-w-[380px]">
-            <CardContent>{/* <Image/> */}</CardContent>
-            <CardFooter className="text-muted flex flex-col items-start gap-4">
-              <CardTitle>Proyecto</CardTitle>
-              <CardDescription className="text-muted">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia perferendis exercitationem cupiditate esse officiis
-                sunt quis? Alias, numquam fugiat at sint dolorem, possimus,
-                repudiandae quidem eveniet et beatae officia ipsa!
-              </CardDescription>
-              <div className="flex gap-4">
-                <p className="text-cyan-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-cyan-400 text-sm">
-                  Ver demo
-                </p>
-                <p className="text-cyan-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-cyan-400 text-sm">
-                  Imagenes
-                </p>
-              </div>
-            </CardFooter>
-          </Card>
+      <section className="px-4 py-12 flex flex-col gap-4" id="projects">
+        <h2 className="text-2xl text-cyan-500 text-center font-medium">
+          Proyectos
+        </h2>
+        <div className="max-w-[1100px] w-full mx-auto flex justify-center">
+          {dataProjects.map((project, index) => (
+            <Card
+              className="bg-primary/30 backdrop-invert backdrop-opacity-10 border-0 max-w-[380px]"
+              key={project.title + index}
+            >
+              <CardContent>
+                <CldImage
+                  width="960"
+                  height="600"
+                  src={project.images[0]}
+                  sizes="100vw"
+                  alt={project.title}
+                />
+              </CardContent>
+              <CardFooter className="text-muted flex flex-col items-start gap-4">
+                <CardTitle>{project.title}</CardTitle>
+                <CardDescription className="text-muted">
+                  {project.description}
+                </CardDescription>
+                <div className="flex gap-4">
+                  {project.urlDemo && (
+                    <Link
+                      className="text-cyan-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-cyan-400 text-sm"
+                      href={project.urlDemo}
+                    >
+                      Ver demo
+                    </Link>
+                  )}
+                  <button className="text-cyan-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-cyan-400 text-sm cursor-pointer">
+                    Imagenes
+                  </button>
+                </div>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </section>
-      <section id="contact">
-        <div>
-          {/* <Form> */}
-          <InputAnimation />
-          {/* </Form> */}
+      <section
+        id="contact"
+        className="max-w-[550px] w-full justify-center mx-auto px-4 py-8"
+      >
+        <div className="p-4 space-y-6 bg-[#558FFF]/5 backdrop-invert backdrop-opacity-5 rounded-2xl flex flex-col items-center">
+          <h2 className="text-2xl text-muted text-center font-medium">
+            Tienes un proyecto en mente?
+          </h2>
+          <Button className="text-muted bg-cyan-800 hover:bg-cyan-700 cursor-pointer">
+            Contactame
+          </Button>
         </div>
       </section>
     </div>

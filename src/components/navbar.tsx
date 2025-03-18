@@ -73,14 +73,14 @@ export default function Navbar() {
 const navList: ItemsList[] = [
   {
     title: "Perfil",
-    url: "/home",
+    url: "/home/#about",
   },
   {
     title: "Proyectos",
-    url: "/home",
+    url: "/home/#projects",
   },
   {
     title: "Contacto",
-    url: "/home",
+    url: "/home/#contact",
   },
 ];
