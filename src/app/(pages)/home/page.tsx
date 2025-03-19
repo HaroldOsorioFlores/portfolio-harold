@@ -14,6 +14,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { dataProjects } from "@/lib/data";
 import { CldImage } from "next-cloudinary";
+import CarouselDialog from "./components/carousel-dialog";
+import { CarouselProvider } from "@/providers/carousel.provider";
 
 export default function HomePage() {
   return (
@@ -108,9 +110,9 @@ export default function HomePage() {
                       Ver demo
                     </Link>
                   )}
-                  <button className="text-cyan-500 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:text-cyan-400 text-sm cursor-pointer">
-                    Imagenes
-                  </button>
+                  <CarouselProvider initialImages={project.images}>
+                    <CarouselDialog />
+                  </CarouselProvider>
                 </div>
               </CardFooter>
             </Card>
