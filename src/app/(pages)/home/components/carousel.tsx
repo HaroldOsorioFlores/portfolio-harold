@@ -35,7 +35,7 @@ export function CarouselImages({ images }: { images: string[] }) {
                     alt=""
                     width={1000}
                     height={1000}
-                    className="object-cover"
+                    className="object-cover "
                   />
                 </CardContent>
               </Card>

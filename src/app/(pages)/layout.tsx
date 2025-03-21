@@ -1,5 +1,6 @@
-import Navbar from "@/components/navbar";
 import { ReactNode } from "react";
+
+import Navbar from "@/components/navbar";
 
 export default function MainLayout({
   children,

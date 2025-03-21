@@ -1,9 +1,11 @@
 "use client";
-import { ItemsList } from "@/lib/interfaces";
-import Link from "next/link";
-import { Button } from "./ui/button";
+
 import { Menu, X } from "lucide-react";
 import React from "react";
+import Link from "next/link";
+
+import { ItemsList } from "@/lib/interfaces";
+import { Button } from "./ui/button";
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);

@@ -14,4 +14,5 @@ export interface IProjects {
   description: string;
   images: string[];
   urlDemo: string | null;
+  tecnologies: string[];
 }

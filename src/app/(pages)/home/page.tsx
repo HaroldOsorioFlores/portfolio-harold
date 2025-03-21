@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { IconsList } from "@/lib/interfaces";
 import { Github, Linkedin } from "lucide-react";
 import Image from "next/image";
+
+import { IconsList } from "@/lib/interfaces";
 import {
   Card,
   CardContent,
@@ -11,11 +12,11 @@ import {
   CardFooter,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { dataProjects } from "@/lib/data";
 import { CldImage } from "next-cloudinary";
 import CarouselDialog from "./components/carousel-dialog";
 import { CarouselProvider } from "@/providers/carousel.provider";
+import { Badge } from "@/components/ui/badge";
 
 export default function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function HomePage() {
                   title={social.title}
                   href={social.url}
                   key={social.title + index}
+                  className="hover:text-orange-400 transition-colors duration-300"
                 >
                   {social.icon}
                 </Link>
@@ -81,7 +83,7 @@ export default function HomePage() {
         <h2 className="text-2xl text-cyan-500 text-center font-medium">
           Proyectos
         </h2>
-        <div className="max-w-[1100px] w-full mx-auto flex justify-center">
+        <div className="max-w-[1200px] w-full mx-auto flex justify-center gap-4 flex-wrap">
           {dataProjects.map((project, index) => (
             <Card
               className="bg-primary/30 backdrop-invert backdrop-opacity-10 border-0 max-w-[380px]"
@@ -94,13 +96,23 @@ export default function HomePage() {
                   src={project.images[0]}
                   sizes="100vw"
                   alt={project.title}
+                  className="sm:h-[190px] w-full mx-auto object-cover"
                 />
               </CardContent>
-              <CardFooter className="text-muted flex flex-col items-start gap-4">
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription className="text-muted">
-                  {project.description}
-                </CardDescription>
+              <CardFooter className="text-muted flex flex-col items-start gap-4 justify-between h-full">
+                <div className="space-y-4">
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription className="text-muted">
+                    {project.description}
+                  </CardDescription>
+                </div>
+                <div className="flex gap-2 flex-wrap">
+                  {project.tecnologies.map((tecnology, index) => (
+                    <Badge key={tecnology + index} className="bg-cyan-900">
+                      {tecnology}
+                    </Badge>
+                  ))}
+                </div>
                 <div className="flex gap-4">
                   {project.urlDemo && (
                     <Link
@@ -127,9 +139,12 @@ export default function HomePage() {
           <h2 className="text-2xl text-muted text-center font-medium">
             Tienes un proyecto en mente?
           </h2>
-          <Button className="text-muted bg-cyan-800 hover:bg-cyan-700 cursor-pointer">
+          <Link
+            className="text-muted bg-cyan-800 hover:bg-cyan-700 cursor-pointer p-2 rounded-sm text-sm"
+            href={"mailto:haroldosorio32@gmail.com"}
+          >
             Contactame
-          </Button>
+          </Link>
         </div>
       </section>
     </div>
@@ -139,12 +154,12 @@ export default function HomePage() {
 const socialNetworksList: IconsList[] = [
   {
     title: "Github",
-    url: "/home",
+    url: "https://github.com/HaroldOsorioFlores",
     icon: <Github />,
   },
   {
     title: "Linkedin",
-    url: "/home",
+    url: "https://www.linkedin.com/in/harold-gonzalo-osorio-flores-ba174725a/",
     icon: <Linkedin />,
   },
 ];
