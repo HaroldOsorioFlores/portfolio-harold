@@ -1,0 +1,49 @@
+services:
+  front:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: front
+    ports:
+      - '3005:3000'
+    env_file:
+      - .env.local
+    restart: unless-stopped
+    depends_on:
+      - db
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 8G
+    networks:
+      - web-network
+
+  db:
+    container_name: db
+    image: postgres:17-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=admin
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
