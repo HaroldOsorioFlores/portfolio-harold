@@ -4,11 +4,15 @@ import ProjectsSection from '@/components/projects-section';
 import ContactSection from '@/components/contact-section';
 import FloatingCTA from '@/components/floating-cta';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { LangToggle } from '@/components/lang/lang-toggle';
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50">
-      <ThemeToggle />
+      <div>
+        <ThemeToggle />
+        <LangToggle />
+      </div>
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />
