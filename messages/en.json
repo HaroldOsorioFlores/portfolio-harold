@@ -1,0 +1,146 @@
+{
+    "Lang": {
+        "en": "English",
+        "es": "Spanish"
+    },
+    "HomePage": {
+        "welcome": "Hello, I'm Harold Osorio Flores",
+        "hero": "Full Stack Developer",
+        "heroSection": {
+            "badge": {
+                "text": "Harold Gonzalo Osorio Flores - Full Stack Developer"
+            },
+            "headline": {
+                "developer": "Developer",
+                "fullStack": "Full Stack",
+                "engineer": "& Systems Engineer"
+            },
+            "description": "Specialized in Next.js, React, NestJS and Spring Boot. Experience in designing and implementing scalable technological solutions with solid knowledge in SQL databases.",
+            "stats": {
+                "projects": {
+                    "number": "6+",
+                    "label": "Completed Projects"
+                },
+                "experience": {
+                    "number": "2+",
+                    "label": "Years of Experience"
+                },
+                "commitment": {
+                    "number": "100%",
+                    "label": "Commitment"
+                }
+            },
+            "buttons": {
+                "viewProjects": "View Projects",
+                "contact": "Contact"
+            },
+            "contactInfo": {
+                "email": "haroldosorio32@gmail.com",
+                "phone": "+51 938205664",
+                "location": "Arequipa, Peru"
+            },
+            "quote": "Committed to development best practices and delivering high-quality solutions"
+        },
+        "projectsSection": {
+            "badge": "Project Portfolio",
+            "title": "Featured Projects",
+            "description": "Technological solutions that have transformed businesses and generated measurable results",
+            "viewDetails": "View Details",
+            "categories": {
+                "all": "All",
+                "web": "Web",
+                "ai": "AI",
+                "marketplace": "Marketplace",
+                "backend": "Backend",
+                "ecommerce": "E-commerce"
+            },
+            "metrics": {
+                "clientSatisfaction": "Client Satisfaction"
+            }
+        },
+        "skillsSection": {
+            "badge": "Technical Skills",
+            "title": "Technologies & Tools",
+            "description": "Technology stack specialized in modern web development and scalable solutions",
+            "categories": {
+                "frontend": "Frontend",
+                "backend": "Backend",
+                "databases": "Databases",
+                "tools": "Tools & DevOps",
+                "analytics": "Data Analysis",
+                "platforms": "Platforms"
+            },
+            "certifications": {
+                "title": "Certifications",
+                "certiport": {
+                    "title": "CERTIPORT",
+                    "items": ["Database", "JavaScript", "Python", "Data Analysis"]
+                },
+                "cisco": {
+                    "title": "CISCO Networking Academy",
+                    "items": ["Introduction to Data Science", "Python Essentials 1", "CCNA1, CCNA2 and CCNA3 Networking", "Cybersecurity"]
+                }
+            }
+        },
+        "contactSection": {
+            "badge": "Let's Connect",
+            "title": "Ready for your next project?",
+            "description": "I'm available for new projects and collaborations. Let's talk about how I can help you achieve your goals.",
+            "cards": {
+                "email": {
+                    "title": "Contact by Email",
+                    "description": "Send me a direct message to discuss your project and how I can help you",
+                    "button": "Send Email"
+                },
+                "whatsapp": {
+                    "title": "Let's Chat on WhatsApp",
+                    "description": "Direct and fast contact for immediate inquiries about your project",
+                    "button": "Send Message"
+                }
+            },
+            "guarantee": "Response guaranteed within 24 hours",
+            "emailSubject": "Project inquiry",
+            "emailBody": "Hello Harold,%0D%0A%0D%0AI'm interested in talking about my project...",
+            "whatsappMessage": "Hello Harold, I would like to talk about my project..."
+        },
+        "floatingCTA": {
+            "title": "Let's Talk!",
+            "status": "Available for projects",
+            "description": "Do you have a project in mind? Let's talk about how I can help you develop your technological solution",
+            "buttons": {
+                "whatsapp": "Send WhatsApp Message",
+                "email": "Send Email"
+            }
+        },
+        "projectModal": {
+            "client": "Client",
+            "date": "Date",
+            "technologies": "Technologies",
+            "description": "Description",
+            "metrics": {
+                "title": "Project Metrics"
+            },
+            "gallery": "Image Gallery",
+            "buttons": {
+                "viewSite": "View Website",
+                "close": "Close"
+            },
+            "imageAlt": "Image {number}"
+        },
+        "navigation": {
+            "home": "Home",
+            "projects": "Projects",
+            "skills": "Skills",
+            "contact": "Contact"
+        },
+        "common": {
+            "loading": "Loading...",
+            "error": "Error",
+            "retry": "Retry",
+            "close": "Close",
+            "open": "Open",
+            "viewMore": "View more",
+            "viewLess": "View less"
+        }
+    }
+}

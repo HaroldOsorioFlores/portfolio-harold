@@ -1,0 +1,146 @@
+{
+    "Lang": {
+        "en": "Inglés",
+        "es": "Español"
+    },
+    "HomePage": {
+        "welcome": "Hola, soy Harold Osorio Flores",
+        "hero": "Desarrollador Full Stack",
+        "heroSection": {
+            "badge": {
+                "text": "Harold Gonzalo Osorio Flores - Desarrollador Full Stack"
+            },
+            "headline": {
+                "developer": "Desarrollador",
+                "fullStack": "Full Stack",
+                "engineer": "& Ingeniero de Sistemas"
+            },
+            "description": "Especializado en Next.js, React, NestJS y Spring Boot. Experiencia en el diseño e implementación de soluciones tecnológicas escalables con sólidos conocimientos en bases de datos SQL.",
+            "stats": {
+                "projects": {
+                    "number": "6+",
+                    "label": "Proyectos Completados"
+                },
+                "experience": {
+                    "number": "2+",
+                    "label": "Años de Experiencia"
+                },
+                "commitment": {
+                    "number": "100%",
+                    "label": "Compromiso"
+                }
+            },
+            "buttons": {
+                "viewProjects": "Ver Proyectos",
+                "contact": "Contactar"
+            },
+            "contactInfo": {
+                "email": "haroldosorio32@gmail.com",
+                "phone": "+51 938205664",
+                "location": "Arequipa, Perú"
+            },
+            "quote": "Comprometido con las mejores prácticas de desarrollo y la entrega de soluciones de alta calidad"
+        },
+        "projectsSection": {
+            "badge": "Portafolio de Proyectos",
+            "title": "Proyectos Destacados",
+            "description": "Soluciones tecnológicas que han transformado negocios y generado resultados medibles",
+            "viewDetails": "Ver Detalles",
+            "categories": {
+                "all": "Todos",
+                "web": "Web",
+                "ai": "IA",
+                "marketplace": "Marketplace",
+                "backend": "Backend",
+                "ecommerce": "E-commerce"
+            },
+            "metrics": {
+                "clientSatisfaction": "Satisfacción del Cliente"
+            }
+        },
+        "skillsSection": {
+            "badge": "Habilidades Técnicas",
+            "title": "Tecnologías & Herramientas",
+            "description": "Stack tecnológico especializado en desarrollo web moderno y soluciones escalables",
+            "categories": {
+                "frontend": "Frontend",
+                "backend": "Backend",
+                "databases": "Bases de Datos",
+                "tools": "Herramientas & DevOps",
+                "analytics": "Análisis de Datos",
+                "platforms": "Plataformas"
+            },
+            "certifications": {
+                "title": "Certificaciones",
+                "certiport": {
+                    "title": "CERTIPORT",
+                    "items": ["Base de Datos", "JavaScript", "Python", "Análisis de Datos"]
+                },
+                "cisco": {
+                    "title": "CISCO Networking Academy",
+                    "items": ["Introducción a Ciencia de Datos", "Fundamentos de Python 1", "CNNA1, CNNA2 y CNN3 Redes", "Ciberseguridad"]
+                }
+            }
+        },
+        "contactSection": {
+            "badge": "Conectemos",
+            "title": "¿Listo para tu próximo proyecto?",
+            "description": "Estoy disponible para nuevos proyectos y colaboraciones. Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
+            "cards": {
+                "email": {
+                    "title": "Contacta por Email",
+                    "description": "Envíame un mensaje directo para discutir tu proyecto y cómo puedo ayudarte",
+                    "button": "Enviar Email"
+                },
+                "whatsapp": {
+                    "title": "Conversemos por WhatsApp",
+                    "description": "Contacto directo y rápido para consultas inmediatas sobre tu proyecto",
+                    "button": "Enviar Mensaje"
+                }
+            },
+            "guarantee": "Respuesta garantizada en 24 horas",
+            "emailSubject": "Consulta sobre proyecto",
+            "emailBody": "Hola Harold,%0D%0A%0D%0AMe interesa hablar sobre mi proyecto...",
+            "whatsappMessage": "Hola Harold, me gustaría hablar sobre mi proyecto..."
+        },
+        "floatingCTA": {
+            "title": "¡Hablemos!",
+            "status": "Disponible para proyectos",
+            "description": "¿Tienes un proyecto en mente? Conversemos sobre cómo puedo ayudarte a desarrollar tu solución tecnológica",
+            "buttons": {
+                "whatsapp": "Enviar Mensaje WhatsApp",
+                "email": "Enviar Email"
+            }
+        },
+        "projectModal": {
+            "client": "Cliente",
+            "date": "Fecha",
+            "technologies": "Tecnologías",
+            "description": "Descripción",
+            "metrics": {
+                "title": "Métricas del Proyecto"
+            },
+            "gallery": "Galería de Imágenes",
+            "buttons": {
+                "viewSite": "Ver Sitio Web",
+                "close": "Cerrar"
+            },
+            "imageAlt": "Imagen {number}"
+        },
+        "navigation": {
+            "home": "Inicio",
+            "projects": "Proyectos",
+            "skills": "Habilidades",
+            "contact": "Contacto"
+        },
+        "common": {
+            "loading": "Cargando...",
+            "error": "Error",
+            "retry": "Reintentar",
+            "close": "Cerrar",
+            "open": "Abrir",
+            "viewMore": "Ver más",
+            "viewLess": "Ver menos"
+        }
+    }
+}
