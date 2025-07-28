@@ -1,39 +1,41 @@
+import { useTranslations } from 'next-intl';
+
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 
 const skills = [
   {
-    category: 'Frontend',
+    category: 'frontend',
     technologies: ['Next.js', 'React', 'TypeScript', 'HTML', 'CSS', 'JavaScript'],
     icon: '🛸',
     emoji: '🌟',
   },
   {
-    category: 'Backend',
+    category: 'backend',
     technologies: ['NestJS', 'Spring Boot', 'Python', 'Java', 'PHP'],
     icon: '🛰️',
     emoji: '⚡',
   },
   {
-    category: 'Bases de Datos',
+    category: 'databases',
     technologies: ['MySQL', 'PostgreSQL', 'MongoDB', 'SQL Server'],
     icon: '🌌',
     emoji: '💾',
   },
   {
-    category: 'Herramientas',
+    category: 'tools',
     technologies: ['Docker', 'Git', 'AWS', 'Postman', 'Figma', 'Vercel'],
     icon: '🔧',
     emoji: '🛠️',
   },
   {
-    category: 'Análisis de Datos',
+    category: 'analytics',
     technologies: ['ETL', 'Pentaho', 'PowerBI', 'Machine Learning', 'YOLO'],
     icon: '📊',
     emoji: '🤖',
   },
   {
-    category: 'Plataformas',
+    category: 'platforms',
     technologies: ['Linux', 'WordPress', 'AWS', 'Kali Linux', 'Manjaro'],
     icon: '🌍',
     emoji: '💻',
@@ -41,6 +43,8 @@ const skills = [
 ];
 
 export default function SkillsSection() {
+  const t = useTranslations('HomePage');
+
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Floating Stars */}
@@ -54,14 +58,14 @@ export default function SkillsSection() {
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-200 dark:border-gray-600 shadow-lg">
             <span className="text-2xl">🛠️</span>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Stack Tecnológico
+              {t('skillsSection.badge')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Habilidades Técnicas
+            {t('skillsSection.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Dominio de tecnologías modernas para crear soluciones robustas y escalables
+            {t('skillsSection.description')}
           </p>
         </div>
 
@@ -76,7 +80,7 @@ export default function SkillsSection() {
                   {skill.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-4 flex items-center justify-center gap-2">
-                  {skill.category}
+                  {t(`skillsSection.categories.${skill.category}`)}
                   <span className="text-sm">{skill.emoji}</span>
                 </h3>
                 <div className="flex flex-wrap gap-2 justify-center">
@@ -100,30 +104,34 @@ export default function SkillsSection() {
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-200 dark:border-gray-600 shadow-lg">
             <span className="text-2xl">🏆</span>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Certificaciones
+              {t('skillsSection.certifications.title')}
             </span>
           </div>
           <Card className="max-w-4xl mx-auto bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-blue-100 dark:border-gray-700 shadow-xl">
             <CardContent className="p-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-semibold text-gray-800 dark:text-white mb-3">CERTIPORT</h4>
+                  <h4 className="font-semibold text-gray-800 dark:text-white mb-3">
+                    {t('skillsSection.certifications.certiport.title')}
+                  </h4>
                   <ul className="text-gray-600 dark:text-gray-300 space-y-1 text-sm">
-                    <li>• Base de Datos</li>
-                    <li>• JavaScript</li>
-                    <li>• Python</li>
-                    <li>• Análisis de Datos</li>
+                    {t
+                      .raw('skillsSection.certifications.certiport.items')
+                      .map((item: string, index: number) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                   </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-white mb-3">
-                    CISCO Networking Academy
+                    {t('skillsSection.certifications.cisco.title')}
                   </h4>
                   <ul className="text-gray-600 dark:text-gray-300 space-y-1 text-sm">
-                    <li>• Introducción a Ciencia de Datos</li>
-                    <li>• Fundamentos de Python 1</li>
-                    <li>• CNNA1, CNNA2 y CNN3 Redes</li>
-                    <li>• Ciberseguridad</li>
+                    {t
+                      .raw('skillsSection.certifications.cisco.items')
+                      .map((item: string, index: number) => (
+                        <li key={index}>• {item}</li>
+                      ))}
                   </ul>
                 </div>
               </div>

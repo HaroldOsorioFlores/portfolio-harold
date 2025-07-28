@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ExternalLink, Calendar, Users, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -10,21 +11,23 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ProjectModal } from '@/components/project-modal';
 import { projects } from '@/lib/data';
 
-const categories = [
-  { name: 'Todos', emoji: '🌌' },
-  { name: 'Web', emoji: '🌐' },
-  { name: 'IA', emoji: '🤖' },
-  { name: 'Marketplace', emoji: '🏪' },
-  { name: 'Backend', emoji: '⚙️' },
-  { name: 'E-commerce', emoji: '🛒' },
-];
-
 export default function ProjectsSection() {
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const t = useTranslations('HomePage');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedProject, setSelectedProject] = useState<(typeof projects)[0] | null>(null);
 
+  // Categorías desde las traducciones
+  const categories = [
+    { key: 'all', emoji: '🌌' },
+    { key: 'web', emoji: '🌐' },
+    { key: 'ai', emoji: '🤖' },
+    { key: 'marketplace', emoji: '🏪' },
+    { key: 'backend', emoji: '⚙️' },
+    { key: 'ecommerce', emoji: '🛒' },
+  ];
+
   const filteredProjects =
-    selectedCategory === 'Todos'
+    selectedCategory === 'all'
       ? projects
       : projects.filter((project) => project.category === selectedCategory);
 
@@ -48,31 +51,31 @@ export default function ProjectsSection() {
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-200 dark:border-gray-600 shadow-lg">
             <span className="text-2xl">💼</span>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Portafolio de Proyectos
+              {t('projectsSection.badge')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Proyectos Destacados
+            {t('projectsSection.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-            Soluciones tecnológicas que han transformado negocios y generado resultados medibles
+            {t('projectsSection.description')}
           </p>
 
           {/* Project Filters */}
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <Button
-                key={category.name}
-                variant={selectedCategory === category.name ? 'default' : 'outline'}
-                onClick={() => setSelectedCategory(category.name)}
+                key={category.key}
+                variant={selectedCategory === category.key ? 'default' : 'outline'}
+                onClick={() => setSelectedCategory(category.key)}
                 className={
-                  selectedCategory === category.name
+                  selectedCategory === category.key
                     ? 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white shadow-lg'
                     : 'hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-blue-200 dark:border-gray-600'
                 }
               >
                 <span className="mr-2">{category.emoji}</span>
-                {category.name}
+                {t(`projectsSection.categories.${category.key}`)}
               </Button>
             ))}
           </div>
@@ -98,7 +101,7 @@ export default function ProjectsSection() {
                 <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Button size="sm" className="bg-white text-gray-900 hover:bg-gray-100 shadow-lg">
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Ver Detalles
+                    {t('projectsSection.viewDetails')}
                   </Button>
                 </div>
               </div>

@@ -4,11 +4,13 @@ import type React from 'react';
 
 import { Mail, Phone, MapPin, CheckCircle, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 export default function ContactSection() {
+  const t = useTranslations('HomePage');
   return (
     <section
       id="contacto"
@@ -29,15 +31,14 @@ export default function ContactSection() {
           <div className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-200 dark:border-gray-600 shadow-lg">
             <span className="text-2xl">📧</span>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Información de Contacto
+              {t('contactSection.badge')}
             </span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-            Conversemos sobre tu Proyecto
+            {t('contactSection.title')}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            ¿Listo para desarrollar tu próxima solución tecnológica? Contactemos para discutir tu
-            proyecto
+            {t('contactSection.description')}
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export default function ContactSection() {
             <Card className="shadow-2xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-blue-100 dark:border-gray-700">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-6 flex items-center gap-2">
-                  Información de Contacto
+                  {t('contactSection.badge')}
                   <span className="text-sm">📞</span>
                 </h3>
                 <div className="space-y-4">
@@ -58,7 +59,9 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-800 dark:text-white">Email</p>
-                      <p className="text-gray-600 dark:text-gray-300">haroldosorio32@gmail.com</p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {t('heroSection.contactInfo.email')}
+                      </p>
                     </div>
                   </div>
 
@@ -68,7 +71,9 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-800 dark:text-white">Teléfono</p>
-                      <p className="text-gray-600 dark:text-gray-300">+51 938205664</p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {t('heroSection.contactInfo.phone')}
+                      </p>
                     </div>
                   </div>
 
@@ -78,7 +83,9 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="font-medium text-gray-800 dark:text-white">Ubicación</p>
-                      <p className="text-gray-600 dark:text-gray-300">Arequipa, Perú</p>
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {t('heroSection.contactInfo.location')}
+                      </p>
                     </div>
                   </div>
 
@@ -119,36 +126,37 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* Schedule Meeting */}
+            {/* Email Contact */}
             <Card className="shadow-2xl border-0 bg-gradient-to-br from-blue-500 to-purple-600 text-white">
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-4">📧</div>
                 <Mail className="w-12 h-12 mx-auto mb-4 text-blue-200" />
-                <h3 className="text-xl font-semibold mb-2">Contacta por Email</h3>
-                <p className="text-blue-100 mb-4">
-                  Envíame un mensaje directo para discutir tu proyecto y cómo puedo ayudarte
-                </p>
+                <h3 className="text-xl font-semibold mb-2">
+                  {t('contactSection.cards.email.title')}
+                </h3>
+                <p className="text-blue-100 mb-4">{t('contactSection.cards.email.description')}</p>
                 <Button
                   className="bg-white text-blue-600 hover:bg-gray-100 w-full shadow-lg"
                   asChild
                 >
                   <Link
-                    href={
-                      'mailto:haroldosorio32@gmail.com?subject=Consulta sobre proyecto&body=Hola Harold,%0D%0A%0D%0AMe interesa hablar sobre mi proyecto...'
-                    }
+                    href={`mailto:${t('heroSection.contactInfo.email')}?subject=${t(
+                      'contactSection.emailSubject'
+                    )}&body=${t('contactSection.emailBody')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Enviar Email
+                    {t('contactSection.cards.email.button')}
                   </Link>
                 </Button>
               </CardContent>
             </Card>
+
             {/* Response Time */}
             <div className="md:col-span-2 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4 shadow-lg">
               <div className="flex items-center gap-2 text-green-700 dark:text-green-400">
                 <CheckCircle className="w-5 h-5" />
-                <span className="font-medium">Respuesta garantizada en 24 horas</span>
+                <span className="font-medium">{t('contactSection.guarantee')}</span>
               </div>
             </div>
           </div>

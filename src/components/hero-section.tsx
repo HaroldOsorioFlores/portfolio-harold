@@ -1,9 +1,11 @@
 import { ArrowRight, Code2, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
+  const t = useTranslations('HomePage');
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 dark:from-gray-950 dark:via-blue-950 dark:to-indigo-950 text-white overflow-hidden">
       {/* Starfield Background */}
@@ -63,42 +65,44 @@ export default function HeroSection() {
           {/* Professional Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20 shadow-xl">
             <Rocket className="w-5 h-5 text-yellow-300" />
-            <span className="text-sm font-medium text-blue-100">
-              Harold Gonzalo Osorio Flores - Desarrollador Full Stack
-            </span>
+            <span className="text-sm font-medium text-blue-100">{t('heroSection.badge.text')}</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="block mb-2">Desarrollador</span>
+            <span className="block mb-2">{t('heroSection.headline.developer')}</span>
             <span className="bg-gradient-to-r from-yellow-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              Full Stack
+              {t('heroSection.headline.fullStack')}
             </span>{' '}
-            <span className="block mt-2">& Ingeniero de Sistemas</span>
+            <span className="block mt-2">{t('heroSection.headline.engineer')}</span>
           </h1>
 
           {/* Professional Description */}
           <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Especializado en Next.js, React, NestJS y Spring Boot. Experiencia en el diseño e
-            implementación de soluciones tecnológicas escalables con sólidos conocimientos en bases
-            de datos SQL.
+            {t('heroSection.description')}
           </p>
 
           {/* Professional Stats */}
           <div className="flex flex-wrap justify-center gap-8 mb-12 max-w-2xl mx-auto">
             <div className="flex-1 text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
-              <div className="text-3xl font-bold text-yellow-300">6+</div>
-              <div className="text-sm text-blue-200">Proyectos Completados</div>
+              <div className="text-3xl font-bold text-yellow-300">
+                {t('heroSection.stats.projects.number')}
+              </div>
+              <div className="text-sm text-blue-200">{t('heroSection.stats.projects.label')}</div>
               <div className="text-2xl mt-1">💻</div>
             </div>
             <div className="flex-1 text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
-              <div className="text-3xl font-bold text-purple-300">2+</div>
-              <div className="text-sm text-blue-200">Años de Experiencia</div>
+              <div className="text-3xl font-bold text-purple-300">
+                {t('heroSection.stats.experience.number')}
+              </div>
+              <div className="text-sm text-blue-200">{t('heroSection.stats.experience.label')}</div>
               <div className="text-2xl mt-1">⚡</div>
             </div>
             <div className="flex-1 text-center bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/20 shadow-xl">
-              <div className="text-3xl font-bold text-blue-300">100%</div>
-              <div className="text-sm text-blue-200">Compromiso</div>
+              <div className="text-3xl font-bold text-blue-300">
+                {t('heroSection.stats.commitment.number')}
+              </div>
+              <div className="text-sm text-blue-200">{t('heroSection.stats.commitment.label')}</div>
               <div className="text-2xl mt-1">🎯</div>
             </div>
           </div>
@@ -111,7 +115,7 @@ export default function HeroSection() {
               asChild
             >
               <Link href="#proyectos">
-                Ver Proyectos
+                {t('heroSection.buttons.viewProjects')}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -123,7 +127,7 @@ export default function HeroSection() {
             >
               <Link href="#contacto">
                 <Code2 className="mr-2 w-5 h-5" />
-                Contactar
+                {t('heroSection.buttons.contact')}
               </Link>
             </Button>
           </div>
@@ -132,24 +136,21 @@ export default function HeroSection() {
           <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center text-blue-200">
             <div className="flex items-center gap-2">
               <span>📧</span>
-              <span>haroldosorio32@gmail.com</span>
+              <span>{t('heroSection.contactInfo.email')}</span>
             </div>
             <div className="flex items-center gap-2">
               <span>📱</span>
-              <span>+51 938205664</span>
+              <span>{t('heroSection.contactInfo.phone')}</span>
             </div>
             <div className="flex items-center gap-2">
               <span>📍</span>
-              <span>Arequipa, Perú</span>
+              <span>{t('heroSection.contactInfo.location')}</span>
             </div>
           </div>
 
           {/* Professional Quote */}
           <div className="mt-8 max-w-2xl mx-auto">
-            <p className="text-lg text-blue-200 italic">
-              `Comprometido con las mejores prácticas de desarrollo y la entrega de soluciones de
-              alta calidad`
-            </p>
+            <p className="text-lg text-blue-200 italic">&ldquo;{t('heroSection.quote')}&rdquo;</p>
           </div>
         </div>
       </div>
