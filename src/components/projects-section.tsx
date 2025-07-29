@@ -29,7 +29,7 @@ export default function ProjectsSection() {
   const filteredProjects =
     selectedCategory === 'all'
       ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      : projects.filter((project) => project.category.toLowerCase() === selectedCategory);
 
   return (
     <section
